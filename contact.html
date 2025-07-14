@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMe - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            /* Add some vertical padding */
+            position: fixed; /* Fixed header */
+            width: 100%; /* Full width */
+            top: 0; /* Stick to the top */
+            z-index: 1000; /* Stay on top */
+        }
+        .container {
+            max-width: 1200px; /* Max width */
+            margin: 0 auto; /* Center */
+            padding: 10px 10px 20px; /* Space for the fixed header */
+            display: flex; /* Flexbox layout */
+            gap: 20px; /* Space between sections */
+            justify-content: space-between; /* Even spacing */
+        }
+        .logo {
+            font-size: 1.5rem; /* Logo size */
+            color: #1E3A8A; /* Logo color */
+            font-weight: bold; /* Bold font weight */
+        }
+        .navigation {
+            display: flex; /* Flexbox for nav */
+        }
+        .nav-list {
+            list-style: none; /* Remove bullets */
+            display: flex; /* Horizontal layout */
+            gap: 1.5rem; /* Space between items */
+            margin: 0; /* Remove margin */
+            padding: 0; /* Remove padding */
+            margin-top: 20px;
+        }
+        .nav-list a {
+            text-decoration: none; /* No underline */
+            color: #1E3A8A; /* Link color */
+            font-weight: 500; /* Bold text */
+            transition: color 0.3s; /* Hover effect */
+        }
+        .nav-list a:hover {
+            color: #3B82F6; /* Darker blue on hover */
+        }
+        .btn-login {
+            background-color: #2563eb; /* Blue button */
+            color: white; /* White text */
+            padding: 0.5rem 1rem; /* Padding */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer on hover */
+            transition: background-color 0.3s; /* Hover transition */
+        }
+        .btn-login:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+        }
+        .card {
+            background: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            flex: 1; /* Flex-grow */
+            min-width: 300px; /* Minimum width for cards */
+            margin-bottom: 20px; /* Space below cards */
+            margin-top: 160px;
+        }
+        h2 {
+            color: #2b6cb0; /* Dark blue for headings */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 4px; /* Rounded edges */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .button {
+            background: #38a169; /* Green button */
+            color: #ffffff; /* White text */
+            padding: 10px 20px; /* Padding */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer on hover */
+            width: 100%; /* Full width */
+        }
+        .button:hover {
+            background: #2f855a; /* Darker green on hover */
+        }
+        .contact-info p {
+            margin: 10px 0; /* Spacing for paragraphs */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">BookMe</h1>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="userdashboard.html">My Bookings</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="welcome.html">Logout</a></li>
+                </ul> 
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+
+        <div class="card contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Address:</strong> 123 BookMe Street, City, Country</p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p><strong>Email:</strong> info@bookme.com</p>
+            <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+        });
+    </script>
+</body>
+</html>

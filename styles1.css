@@ -1,0 +1,181 @@
+.header {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem 0; /* Add some vertical padding */
+    position: fixed; /* Fixed header */
+    width: 100%; /* Make the header take the full width */
+    top: 0; /* Stick the header to the top */
+    z-index: 1000; /* Ensure the header stays on top */
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px; /* Max width of the header */
+    margin: 0 auto; /* Center the header */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center the items */
+    padding: 0 1.5rem; /* Horizontal padding */
+}
+
+.logo {
+    font-size: 1.5rem; /* Logo font size */
+    color: #1E3A8A; /* Color for the logo */
+    font-weight: bold; /* Bold font weight */
+}
+
+.navigation {
+    display: flex; /* Use Flexbox for navigation */
+}
+
+.nav-list {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 1.5rem; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-list a {
+    text-decoration: none; /* Remove underline */
+    color: #1E3A8A; /* Link color */
+    font-weight: 500; /* Make the text a bit bolder */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-list a:hover {
+    color: #3B82F6; /* Darker blue on hover */
+}
+.btn-login1 {
+    background-color: transparent; /* Transparent background for button */
+    border: 1px solid #2e4fa8; /* Blue border */
+    color: #1E3A8A; /* Blue text color */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    align-self: center; /* Vertically center the button */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Align the link like a button */
+}
+.btn-login {
+    background-color:#2563eb; /* Transparent background for button */
+    /* border: 1px solid #2e4fa8; Blue border */
+    color: white; /* Blue text color */
+    padding: 0.5rem 0; /* Padding for button (adjusted for height) */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    text-decoration: none; /* Remove underline from the link */
+    display: block; /* Make it block-level to fill width */
+    width: 100%; /* Fill the width of the card */
+    border-radius: 4px;  /*Optional: for rounded corners */
+}
+
+.btn-login:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    padding-right:60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 15000px;
+    width: 100%;
+    margin-top: 100px; /* Add margin to account for fixed header */
+}
+
+.input-label{
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+    color: #1d4ed8;
+}
+
+.card-description {
+    color: #2563eb;
+}
+
+.card-content {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+.button {
+    background-color: transparent; /* Transparent background for button */
+    border: 1px solid #2e4fa8; /* Blue border */
+    color: #1E3A8A; /* Blue text color */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    align-self: center; /* Vertically center the button */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #1d4ed8;
+}
+
+a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+}
+
+.text-green-500 {
+    color: #10b981;
+}
+.links{
+    padding-top: 22px;
+    text-align: center;
+}

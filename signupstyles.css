@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Allow for vertical stacking */
+}
+
+.header {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem 0; /* Add some vertical padding */
+}
+
+.container {
+    max-width: 1200px; /* Max width of the header */
+    margin: 0 auto; /* Center the header */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem; /* Horizontal padding */
+}
+
+.logo {
+    font-size: 1.5rem; /* Logo font size */
+    color: #1E3A8A; /* Color for the logo */
+    font-weight: bold; /* Bold font weight */
+}
+
+.navigation {
+    display: flex; /* Use Flexbox for navigation */
+}
+
+.nav-list {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 1.5rem; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-list a {
+    text-decoration: none; /* Remove underline */
+    color: #1E3A8A; /* Link color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-list a:hover {
+    color: #6a9ef1; /* Darker blue on hover */
+}
+
+.btn-login {
+    background-color: transparent; /* Transparent background for button */
+    border: 1px solid #2e4fa8; /* Blue border */
+    color: #1E3A8A; /* Blue text color */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Align the link like a button */
+}
+
+.btn-login:hover {
+    background-color: #E0F2FE; /* Light blue on hover */
+}
+
+.flex {
+    display: flex;
+    justify-content: center; /* Center the card */
+    align-items: center; /* Vertically center the card */
+    flex-grow: 1; /* Allow the card to grow */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 40px;
+    padding-right: 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit card width */
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #1d4ed8;
+    margin: 0;
+}
+
+.card-description {
+    color: #2563eb;
+}
+
+.card-content {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-label {
+    color: #2563eb;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+.terms {
+    display: flex;
+    align-items:center;
+    /* justify-content: flex-start; Align items to the left */
+    margin-top: 10px;
+    padding: 10px; 
+    /* width: 15px; Optional: Add some space above the terms section */
+}
+.terms input[type="checkbox"] {
+    width: 15px; /* Adjust the width */
+    height: 15px; /* Adjust the height */
+    margin-right: 8px; /* Space between checkbox and label */
+    /* Optional: Change appearance for better look */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    padding: 10px;
+}
+
+
+.link {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.btn-signup {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #1d4ed8;
+}
+
+.footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+}

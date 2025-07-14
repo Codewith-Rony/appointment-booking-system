@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .header {
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 1rem 0; /* Add some vertical padding */
+            position: fixed; /* Fixed header */
+            width: 100%; /* Make the header take the full width */
+            top: 0; /* Stick the header to the top */
+            z-index: 1000; /* Ensure the header stays on top */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px; /* Max width of the header */
+            margin: 0 auto; /* Center the header */
+            display: flex; /* Use Flexbox for alignment */
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center; /* Vertically center the items */
+            padding: 0 1.5rem; /* Horizontal padding */
+        }
+
+        .logo {
+            font-size: 1.5rem; /* Logo font size */
+            color: #1E3A8A; /* Color for the logo */
+            font-weight: bold; /* Bold font weight */
+        }
+
+        .navigation {
+            display: flex; /* Use Flexbox for navigation */
+        }
+
+        .nav-list {
+            list-style: none; /* Remove default list styles */
+            display: flex; /* Use flexbox for horizontal layout */
+            gap: 1.5rem; /* Space between items */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav-list a {
+            text-decoration: none; /* Remove underline */
+            color: #1E3A8A; /* Link color */
+            font-weight: 500; /* Make the text a bit bolder */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .nav-list a:hover {
+            color: #3B82F6; /* Darker blue on hover */
+        }
+
+        .btn-login {
+            background-color: #2563eb; /* Background color for button */
+            color: white; /* Text color */
+            padding: 0.5rem 0; /* Padding for button (adjusted for height) */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+            text-decoration: none; /* Remove underline from the link */
+            display: block; /* Make it block-level to fill width */
+            width: 100%; /* Fill the width of the card */
+            border-radius: 4px;  /* Optional: for rounded corners */
+        }
+
+        .btn-login:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 20px;
+            padding-top: 80px; /* To avoid content hiding behind the fixed header */
+        }
+
+        .booking-container {
+            max-width: 600px; /* Max width for the booking form */
+            background-color: white;
+            border: 1px solid #bee3f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        h2 {
+            color: #2b6cb0;
+        }
+
+        p {
+            color: #3182ce;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #2b6cb0;
+        }
+
+        input, select {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #bee3f8;
+            border-radius: 4px;
+        }
+
+        .confirm-button {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: #38a169;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            display: block; /* Ensures it fills the width */
+            width: 100%; /* Fills the width */
+            border: none; /* Remove border for button */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .confirm-button:hover {
+            background-color: #2f855a;
+        }
+    </style>
+    <title>Book an Appointment</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">BookMe</h1>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="userdashboard.html">My Bookings</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="welcome.html">Logout</a></li>
+                </ul> 
+            </nav>
+        </div>
+    </header>
+
+    <div class="booking-container">
+        <h2>Book an Appointment</h2>
+        <p>Fill in the details to schedule your appointment</p>
+        <form class="booking-form" id="bookingForm">
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+                <option value="" disabled selected>Choose a service</option>
+                <option value="haircut">Haircut</option>
+                <option value="massage">Massage</option>
+                <option value="manicure">Manicure</option>
+                <option value="facial">Facial</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input id="date" type="date" name="date" required />
+
+            <label for="time">Time</label>
+            <input id="time" type="time" name="time" required />
+
+            <label for="name">Full Name</label>
+            <input id="name" type="text" name="name" required />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" required />
+            
+            <button type="submit" class="confirm-button">Confirm Booking</button>
+        </form>
+    </div>
+
+    <!-- Include jwt-decode library in your HTML file -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Retrieve the token from local storage
+    const token = localStorage.getItem('token');
+
+    // Decode the token to extract user information
+    let userId;
+    if (token) {
+        const decodedToken = jwt_decode(token);
+        console.log(decodedToken);  // Log the entire decoded token to check the structure
+        userId = decodedToken.user.id;   // Assuming the user ID is stored as 'id' in the token
+    } else {
+        alert('User not logged in. Please log in first.');
+        return;
+    }
+            const formData = {
+                service: this.service.value,
+                date: this.date.value,
+                time: this.time.value,
+                name: this.name.value,   // User's full name
+                email: this.email.value, // User's email
+                phone: this.phone.value, // User's phone number
+                userId: userId, // Set the actual user ID from the decoded token
+            };
+
+            try {
+                const response = await fetch('http://localhost:5550/bookingSubmission', { // Adjust the API endpoint as necessary
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Booking confirmed successfully!'); // Show success message
+                    this.reset(); // Reset the form fields
+                } else {
+                    const errorMessage = await response.json(); // Parse the error message from the response
+                    alert('Error: ' + (errorMessage.message || 'Unable to confirm booking.'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

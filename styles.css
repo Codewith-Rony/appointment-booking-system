@@ -1,0 +1,156 @@
+.header {
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem 0; /* Add some vertical padding */
+  }
+  
+  .container {
+    max-width: 1200px; /* Max width of the header */
+    margin: 0 auto; /* Center the header */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem; /* Horizontal padding */
+  }
+  
+  .logo {
+    font-size: 1.5rem; /* Logo font size */
+    color: #1E3A8A; /* Color for the logo */
+    font-weight: bold; /* Bold font weight */
+  }
+  
+  .navigation {
+    display: flex; /* Use Flexbox for navigation */
+  }
+  
+  .nav-list {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 1.5rem; /* Space between items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .nav-list a {
+    text-decoration: none; /* Remove underline */
+    color: #1E3A8A; /* Link color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .nav-list a:hover {
+    color: #6a9ef1; /* Darker blue on hover */
+  }
+  
+  .btn-login {
+    background-color: transparent; /* Transparent background for button */
+    border: 1px solid #2e4fa8; /* Blue border */
+    color: #1E3A8A; /* Blue text color */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    align-self: center; /* Vertically center the button */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Align the link like a button */
+}
+
+.btn-login:hover {
+    background-color: #E0F2FE; /* Light blue on hover */
+}
+
+
+    
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.layout {
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content-center {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #2563eb;
+  margin-bottom: 24px;
+}
+
+.btn-book {
+  background-color: #10b981;
+  color: white;
+  font-size: 1.25rem;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-book:hover {
+  background-color: #059669;
+  transform: translateY(-5px) scale(1.05);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1200px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  border: 1px solid #e0f2fe;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  height: 48px;
+  width: 48px;
+  margin-bottom: 16px;
+  color: #2563eb;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+.service-desc {
+  color: #2563eb;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Signup</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .card-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .card-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-header p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 8px 0 0;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+
+  .error-message {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 4px;
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #1d4ed8;
+  }
+  .link{
+    text-decoration: none;
+    color: #007bff;
+  }
+  .link:hover{
+    text-decoration: underline;
+  }
+  p{
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <h2>Admin Signup</h2>
+    <p>Create your admin account</p>
+  </div>
+
+  <form id="signupForm" class="form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <p class="error-message" id="nameError"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" required>
+      <p class="error-message" id="emailError"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <p class="error-message" id="passwordError"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <p class="error-message" id="confirmPasswordError"></p>
+    </div>
+
+    <button type="button"class="button">Sign Up</button>
+    <p>Already Registerd? <a href="adminlogin.html" class="link">Then Signup Here</a></p>
+  </form>
+</div>
+<script>
+  document.querySelector('.button').addEventListener('click', async function() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Basic validation
+    if (password !== confirmPassword) {
+      document.getElementById('confirmPasswordError').innerText = 'Passwords do not match.';
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5550/admin/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert(data.message);  // Show success message
+        window.location.href = 'adminlogin.html';  // Redirect to admin login
+      } else {
+        alert(data.message);  // Show error message
+      }
+    } catch (err) {
+      alert('Error signing up, please try again.');
+    }
+  });
+</script>
+
+</body>
+</html>

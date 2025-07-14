@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Allow for vertical stacking */
+        }
+        .header {
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 1rem 0; /* Add some vertical padding */
+        }
+
+        .container {
+            max-width: 1200px; /* Max width of the header */
+            margin: 0 auto; /* Center the header */
+            display: flex; /* Use Flexbox for alignment */
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center; /* Vertically center the items */
+            padding: 0 1rem; /* Horizontal padding */
+        }
+
+        .logo {
+            font-size: 1.5rem; /* Logo font size */
+            color: #1E3A8A; /* Color for the logo */
+            font-weight: bold; /* Bold font weight */
+        }
+
+        .navigation {
+            display: flex; /* Use Flexbox for navigation */
+        }
+
+        .nav-list {
+            list-style: none; /* Remove default list styles */
+            display: flex; /* Use flexbox for horizontal layout */
+            gap: 1.5rem; /* Space between items */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav-list a {
+            text-decoration: none; /* Remove underline */
+            color: #1E3A8A; /* Link color */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .nav-list a:hover {
+            color: #6a9ef1; /* Darker blue on hover */
+        }
+
+        .btn-login {
+            background-color: transparent; /* Transparent background for button */
+            border: 1px solid #2e4fa8; /* Blue border */
+            color: #1E3A8A; /* Blue text color */
+            padding: 0.5rem 1rem; /* Padding for button */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+            text-decoration: none; /* Remove underline from the link */
+            display: inline-block; /* Align the link like a button */
+        }
+
+        .btn-login:hover {
+            background-color: #E0F2FE; /* Light blue on hover */
+        }
+
+        h1 {
+            color: #1D4ED8; /* Blue-800 color */
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #E0F2FE; /* Blue-100 color */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1D4ED8;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title span {
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        .card-description {
+            color: #2563EB; /* Blue-600 color */
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            color: #1E3A8A; /* Blue-700 color */
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #22C55E; /* Green-500 color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none; /* Remove underline for button */
+            display: inline-block; /* Align the link like a button */
+        }
+
+        .btn:hover {
+            background-color: #16A34A; /* Green-600 color */
+            transform: translateY(-5px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <h1 class="logo">BookMe</h1>
+          <nav class="navigation">
+            <ul class="nav-list">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="userdashboard.html">My Bookings</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="welcome.html">Logout</a></li>
+
+              <!-- <li><a href="login.html" class="btn-login">Login/Signup</a></li> -->
+            </ul> 
+          </nav>
+        </div>
+    </header>
+
+    <h1>Our Services</h1>
+
+    <div class="grid">
+        <!-- Service 1: Haircut -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><span>✂️</span>Haircut</h2>
+                <p class="card-description">Professional haircut by our expert stylists</p>
+            </div>
+            <div class="card-content">
+                <p>Duration: 30 min</p>
+            </div>
+            <div class="card-footer">
+                <a href="booking.html" class="btn">Book Now</a> <!-- Changed to anchor tag -->
+            </div>
+        </div>
+
+        <!-- Service 2: Massage -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><span>💆</span>Massage</h2>
+                <p class="card-description">Relaxing massage to relieve stress and tension</p>
+            </div>
+            <div class="card-content">
+                <p>Duration: 60 min</p>
+            </div>
+            <div class="card-footer">
+                <a href="booking.html" class="btn">Book Now</a> <!-- Changed to anchor tag -->
+            </div>
+        </div>
+
+        <!-- Service 3: Manicure -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><span>💅</span>Manicure</h2>
+                <p class="card-description">Nail care and beautiful nail polish application</p>
+            </div>
+            <div class="card-content">
+                <p>Duration: 45 min</p>
+            </div>
+            <div class="card-footer">
+                <a href="booking.html" class="btn">Book Now</a> <!-- Changed to anchor tag -->
+            </div>
+        </div>
+
+        <!-- Service 4: Facial -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title"><span>😊</span>Facial</h2>
+                <p class="card-description">Rejuvenating facial treatment for glowing skin</p>
+            </div>
+            <div class="card-content">
+                <p>Duration: 60 min</p>
+            </div>
+            <div class="card-footer">
+                <a href="booking.html" class="btn">Book Now</a> <!-- Changed to anchor tag -->
+
+            </div>
+        </div>
+
+       
+
+    </div>
+
+</body>
+</html>

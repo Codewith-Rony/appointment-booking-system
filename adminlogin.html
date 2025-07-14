@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    /* Reset and basic styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the container within the header */
+}
+
+
+    .logo {
+      font-size: 1.5rem;
+      color: #1E3A8A;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+      padding: 40px;
+      flex-grow: 1;
+    }
+
+    .card {
+      background-color: white;
+      padding: 60px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 10px 0 20px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .form label {
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .form input[type="email"],
+    .form input[type="password"] {
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .link {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <h1 class="logo">BookMe</h1>
+        </div>
+      </header>
+      
+  <div class="card-container">
+    <div class="card">
+      <h2 class="title">Admin Login</h2>
+      <p class="subtitle">Access the appointment booking system dashboard</p>
+
+      <form id="loginForm" class="form">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required>
+
+        <div class="form-options">
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn">Sign in</button>
+      </form>
+      <p class="footer-text" >Not Registered yet? <a href="adminsignup.html" class="link">Click Here</a></p>
+      <p class="footer-text">Not an admin? <a href="login.html" class="link">Return to main site</a></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+  
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+  
+      try {
+        const response = await fetch('http://localhost:5550/admin/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),  // Send email and password in JSON format
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          alert(data.message);  // Show success message
+          // Store the token if needed for authenticated requests
+          localStorage.setItem('adminToken', data.token);
+          window.location.href = 'adminUI.html';  // Redirect to admin dashboard
+        } else {
+          alert(data.message);  // Show error message
+        }
+      } catch (err) {
+        alert('Error logging in, please try again.');
+      }
+    });
+  </script>
+  
+</body>
+</html>
